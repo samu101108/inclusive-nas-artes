@@ -1,0 +1,20 @@
+{
+  "name": "inclusive-artes",
+  "version": "1.0.0",
+  "description": "The \"_s\" for Timber: a dead-simple theme that you can build from. The primary purpose of this theme is to provide a file structure rather than a framework for markup or styles. Configure your Sass, scripts, and task runners however you would like!",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "watch": "npx tailwindcss-cli@latest -i ./static/estilos/tailwind/input.css -o ./static/estilos/tailwind/output.css --watch"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.6",
+    "tailwind": "^4.0.0"
+  }
+}
