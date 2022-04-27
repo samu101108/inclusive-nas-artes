@@ -1,0 +1,55 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper container mx-auto">
+		<div class="mx-auto mt-10 mt-10 mb-4">
+			<h2 class="mb-4 text-4xl text-marrom font-bold">Fale Conosco</h2>
+			<p class="mb-2 text-xl text-marrom font-bold">Inclusive nas Artes - Fazer o bem, faz bem.</p>
+		</div>
+
+		<div class="md:flex md:justify-between px-4 md:px-0 mb-10">
+			<div class="card md:w-5/12 my-6">
+				<p class="mb-2 text-black font-bold">Deixe sua mensagem:</p>
+
+				<style>
+					.nome,
+					.email,
+					.telefone,
+					.mensagem,
+					.btn-enviar {border: 1px solid #b4b4b4;}
+				</style>
+
+				{% filter shortcodes %}
+					[contact-form-7 id="6" title="Formulário de contato"]
+				{% endfilter %}
+				
+
+				<p class="mb-2 mt-4 text-black font-bold">Telefones:</p>
+				<ul class="">
+					<li class="text-cinza font-medium mb-2"><a href="tel:5541984212001">+ 55 41 98421-2001 (Adriana)</a></li>
+					<li class="text-cinza font-medium mb-2"><a href="tel:5541996974057">+ 55 41 99697-4057 (Rodrigo)</a></li>
+				</ul>
+
+				<h3 class="text-black font-bold capitalize mt-8 mb-2">Siga-nos nas redes sociais</h3>
+				<ul>
+					<li class="text-cinza font-medium mb-2"><a href="https://www.instagram.com/inclusivenasartes/">Instagram</a></li>
+					<li class="text-cinza font-medium mb-2"><a href="https://www.facebook.com/inclusivenasartes/">Facebook</a></li>
+				</ul>
+
+			</div>
+
+			<div class="card md:w-5/12 my-6 max-w-[617px]">
+				<p class="mb-2 text-black font-bold">Faça-nos uma visita em: </p>
+				<address class="text-black">
+					Rua Amazonas, 1137 - Água Verde   <br>
+					CEP 80.610-030 <br>
+					Curitiba - PR - Brasil
+				</address>
+				<iframe src="https://www.google.com/maps/embed?pb=!4v1647646510818!6m8!1m7!1s5vqyEjBU_iVViHjfJAFkjg!2m2!1d-25.46849503032665!2d-49.28659315839516!3f149.11!4f0!5f0.7820865974627469" width="320" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+					class="w-full"></iframe>
+				<p class="text-right mt-3"><a class="decoration-solid" target="_blank" href="https://goo.gl/maps/V2zYfvJUTTL5w2Pf7">Clique e veja como chegar</a></p>
+			</div
+		</div>
+
+	</div><!-- /content-wrapper -->
+{% endblock %}

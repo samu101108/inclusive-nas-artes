@@ -1,0 +1,72 @@
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../../../node_modules/bootstrap/scss/_functions.scss";
+
+
+// 2. Include any default variable overrides here
+
+$theme-colors: (
+        "primary": #00CFB4,
+        "secondary": #087265,
+        "success": #C5DB20,
+        "danger": #FF654B,
+        "warning": #FEE35A,
+        "info": #A14084
+);
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins";
+
+// 4. Include any optional Bootstrap components as you like
+@import "../../../node_modules/bootstrap/scss/root";
+@import "../../../node_modules/bootstrap/scss/reboot";
+@import "../../../node_modules/bootstrap/scss/nav";
+@import "../../../node_modules/bootstrap/scss/navbar";
+@import "../../../node_modules/bootstrap/scss/dropdown";
+@import "../../../node_modules/bootstrap/scss/modal";
+@import "../../../node_modules/bootstrap/scss/transitions";
+@import "../../../node_modules/bootstrap/scss/close";
+
+// 5. Add additional custom code here
+
+.container {
+        padding: 0 16px;
+}
+
+.evento-template-default.single {
+        .article-body {
+                ul {
+                list-style: disc;
+                }
+                a { color: #10979B ;}
+                p {
+                color: #646464;
+                margin-bottom: 16px;
+                }
+                
+                h1,
+                h2,
+                h3,
+                h4,
+                h5,
+                h6 {color: #747474;}
+                
+                @for $var from 1 to 7 {
+                $size: calc(28px - calc(2px * (#{$var} - 1)));
+                        h#{$var} {
+                                font-size: $size;
+                                margin-bottom: $size;
+                        }
+                }
+        }
+        article {
+                h2 {
+                font-weight: 500;
+                font-size: 26px;
+                line-height: 28px;
+                }
+        }
+}

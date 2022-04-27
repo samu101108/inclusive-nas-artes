@@ -17,6 +17,19 @@ $context          = Timber::context();
 $context['posts'] = new Timber\PostQuery();
 $context['foo']   = 'bar';
 $templates        = array( 'index.twig' );
+
+
+
+// Contexto para o carrossel do topo
+$args = array(
+	'post_type' => 'post',
+	'posts_per_page' => 3,
+);
+$context['carrossel'] = new Timber\PostQuery($args);
+// End - Contexto para o carrossel do topo
+
+
+
 if ( is_home() ) {
 	array_unshift( $templates, 'front-page.twig', 'home.twig' );
 }

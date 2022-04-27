@@ -1,8 +1,8 @@
 {% if menu %}
-	<ul>
+	<ul class="navbar-nav ms-auto mb-2 md:mb-0 mb-lg-0 font-bold">
 	{% for item in items %}
-		<li class="{{ item.classes | join(' ') }}">
-			<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+		<li class="{{ item.classes | join(' ') }} ml-6 nav-item">
+			<a class="nav-link" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
 			{% include "menu.twig" with {'items': item.children} %}
 		</li>
 	{% endfor %}

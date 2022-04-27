@@ -2,38 +2,46 @@
 
 {% block content %}
 	<div class="content-wrapper">
-		<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
-			<img src="{{ post.thumbnail.src|resize(1200, 300) }}">
-			<section class="article-content">
-				<h1 class="article-h1">{{ post.title }}</h1>
-				<a href="{{ post.link }}">{{ _e('edit') }}</a>
-				<p class="blog-author">
-					<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> <time datetime="{{ post.date|date('Y-m-d H:i:s') }}">{{ post.date }}</time>
-				</p>
-				<div class="article-body">
-					{{post.content}}
-				</div>
-			</section>
+		<div class="container mx-auto py-10">
+			<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+				
+				<section class="article-content">
+					<div class="relative">
+						<figure class="bg-gradient-to-tl from-vermelho-400 via-amarelo-400 to-azul-400 opacity-60 w-full h-full">
+							<img class="mix-blend-overlay grayscale inset-0 w-full h-full object-cover object-center max-h-80" src="{{ post.thumbnail.src }}">
+						</figure>
+						<h1 class="shadow-md hover:drop-shadow-xl pl-10 absolute inset-0 article-h1 w-full h-full display flex items-center mb-4 text-3xl md:text-5xl text-white font-bold"
+							style="text-shadow:0 2px 4px #000000;">{{ post.title }}</h1>
+					</div>
+				
+					<p class="blog-author text-sm pl-10 text-right">
+						<span>&bull;</span> <time class="relative -top-8 right-5 text-white z-10" style="text-shadow: 1px 1px gray;" datetime="{{ post.date|date('Y-m-d H:i:s') }}">{{ post.date }}</time>
+					</p>
+					<div class="article-body max-w-4xl mx-auto">
+						{{post.content}}
+					</div>
+				</section>
 
-			<!-- comment box -->
-			<section class="comment-box">
-				<!-- comments -->
-				<div class="comments">
-				    {% if post.comments %}
-					<h3> comments </h3>
-					{% for cmt in post.comments %}
-					    {% include "comment.twig" with {comment:cmt} %}
-					{% endfor %}
-				    {% endif %}
-				</div>
+				<!-- comment box -->
+				<section class="comment-box hidden">
+					<!-- comments -->
+					<div class="comments">
+						{% if post.comments %}
+						<h3> comments </h3>
+						{% for cmt in post.comments %}
+							{% include "comment.twig" with {comment:cmt} %}
+						{% endfor %}
+						{% endif %}
+					</div>
 
-				{% if post.comment_status == "closed" %}
-					<p> comments for this post are closed </p>
-				{% else %}
-				    <!-- comment form -->
-				    {% include "comment-form.twig" %}
-				{% endif %}
-			</section>
-		</article>
+					{% if post.comment_status == "closed" %}
+						<p> comments for this post are closed </p>
+					{% else %}
+						<!-- comment form -->
+						{% include "comment-form.twig" %}
+					{% endif %}
+				</section>
+			</article>
+		</div>
 	</div><!-- /content-wrapper -->
 {% endblock %}

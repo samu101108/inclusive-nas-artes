@@ -1,15 +1,125 @@
 {% extends "base.twig" %}
 
 {% block content %}
-<h1 class="text-5xl">HOMEPAGE</h1>
-	<div class="content-wrapper">
-		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
-			<section class="article-content">
-				<h1 class="article-h1">{{post.title}}</h1>
-				<div class="article-body">
-					{{post.content}}
+
+	<section class="somos-uma-associacao bg-bege bg-home-top">
+		<div class="container md:mx-auto py-24 md:mx-8">
+			<div class="flex justify-center md:justify-between items-center flex-wrap md:flex-nowrap gap-5">
+				<div class="max-w-2xl md:ml-12">
+					<p class="text-marrom mb-4 text-xl font-medium">Somos uma associação sem fins lucrativos que possui como foco de atuação prioritário pessoas adultas com deficiência ou necessidades específicas.</p>
+					<p class="text-marrom mb-4 text-xl font-medium">Oferecendo a oportunidade dos participantes desenvolverem novas habilidades e despertar suas potencialidades a partir dos 3 pilares de atuação: artes cênicas, visuais e musicais.</p>
 				</div>
-			</section>
-		</article>
-	</div><!-- /content-wrapper -->
+				<div class="md:mr-12">
+					<img class="w-full max-w-[361px]" src="{{theme.link}}/static/imagens/logo-home-top.png" alt="" width="361" height="256">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="carrossel">
+		<section id="carrossel">
+		{% block carrossel %}
+			{% include 'partial/carrossel-top.twig' %}
+		{% endblock %}
+	</section>
+	</section>
+
+	<section class="video">
+		<div class="container mx-auto py-24">
+			<a href="https://www.youtube.com/embed/1gE1-SiBNBg" data-fancybox="video">
+				<img class="w-full mx-auto max-w-[712px]" src="{{theme.link}}/static/imagens/video-thumb.jpg" alt="Miniatura do vídeo" width="712" height="371">
+			</a>
+		</div>
+	</section>
+
+	<section class="pilares">
+		<div class="container mx-auto py-8">
+			<h2 class="text-marrom text-4xl capitalize text-center mb-8">Nossos Pilares</h2>
+			
+			<div class="flex flex-wrap md:flex-nowrap gap-5 justify-center md:justify-between max-w-[902px] mx-auto">
+				<div>
+					<img class="w-full max-w-[255px]" src="{{theme.link}}/static/imagens/logo-azul.png" alt="" width="255" height="189">
+				</div>
+				<div>
+					<img class="w-full max-w-[255px]" src="{{theme.link}}/static/imagens/logo-vermelho.png" alt="" width="255" height="189">
+				</div>
+				<div>
+					<img class="w-full max-w-[255px]" src="{{theme.link}}/static/imagens/logo-amarelo.png" alt="" width="255" height="189">
+				</div>
+				</div>
+			</div>
+			
+			<div class="flex justify-center pb-7 border-b border-b-marrom/50">
+				<a href="" class="m-auto btn mt-4 px-8 py-2 rounded-full bg-azul-400 hover:bg-azul-600 transition-all text-white font-bold hover:text-white">SAIBA MAIS</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="mundo-melhor">
+		<div class="container md:mx-auto pt-10 pb-14 md:mx-8">
+			<div class="flex justify-center items-center flex-wrap md:flex-nowrap gap-5">
+				<div class="md:mr-14">
+					<img class="w-full max-w-[430px]" src="{{theme.link}}/static/imagens/Rectangle23.jpg" alt="" width="430" height="378">
+				</div>
+				<div class="max-w-xl">
+					<h2 class="text-marrom text-4xl capitalize mb-4">​Um Mundo Melhor Para Todos</h2>
+					<p class="text-marrom mb-4">Aqui na Associação Inclusive nas Artes - Centro de Arte, Cultura e Inclusão, somos movidos em fazer a nossa parte para tornar o mundo um lugar melhor para todos.</p>
+					<p class="text-marrom mb-4">Nós nos esforçamos para construir relacionamentos produtivos e causar um impacto positivo em todas as nossas atividades.</p>
+					<p class="text-marrom mb-4">Neste sentido acreditamos que a arte é um caminho transformador para a melhoria da qualidade de vida e felicidade para nossos usuários e demais envolvidos.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="manter-servico bg-bege">
+		<div class="container mx-auto py-8">
+			<h2 class="text-marrom text-4xl capitalize text-center mb-1">​Ajude-nos a manter nossos serviços.</h2>
+			<p class="text-marrom text-2xl capitalize text-center mb-8">Fazer o bem faz bem, participe!</p>
+			<div class="flex justify-center flex-wrap md:flex-nowrap gap-5">
+				<div>
+					<img class="w-full max-w-[516px]" src="{{theme.link}}/static/imagens/ImagemDoacao.jpg" alt="" width="516" height="391">
+					<div class="flex justify-center">
+						<a href="" class="m-auto btn mt-4 px-8 py-2 rounded-full bg-vermelho-400 hover:bg-vermelho-600 transition-all text-white font-bold hover:text-white">FAÇA SUA DOAÇÃO</a>
+					</div>
+				</div>
+				<div>
+					<img class="w-full max-w-[516px]" src="{{theme.link}}/static/imagens/ImagemVoluntario.jpg" alt="" width="516" height="391">
+					<div class="flex justify-center">
+						<a href="" class="m-auto btn mt-4 px-8 py-2 rounded-full bg-vermelho-400 hover:bg-vermelho-600 transition-all text-white font-bold hover:text-white">SEJA UM VOLUNTÁRIO</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="citacao">
+		<div class="container md:mx-auto pt-10 pb-14 md:mx-8">
+			<div class="flex justify-center items-center flex-wrap md:flex-nowrap gap-5">
+				<div class="max-w-sm md:mr-14">
+					<figure>
+						<blockquote class="mr-24">
+							<p class="text-marrom mb-4 text-3xl font-medium">Quando a gente faz o bem para o próximo, também fazemos o bem para nós mesmos</p>
+						</blockquote>
+						<figcaption class="text-marrom text-xl text-right pr-7">Adriana Villar</figcaption>
+					</figure>
+				</div>
+				<div>
+					<img class="w-full max-w-[330px]" src="{{theme.link}}/static/imagens/adiana-pintando.jpg" alt="" width="330" height="278">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="apoiadores border-t border-t-marrom/50">
+		<div class="container md:mx-auto pt-10 pb-14 md:mx-8">
+			<h2 class="text-marrom text-4xl capitalize mt-6 mb-4 text-center">​Nossos apoiadores e Parceiros</h2>
+			<div class="flex justify-center items-center">
+				<div>
+					<img class="w-full max-w-[916px]" src="{{theme.link}}/static/imagens/parceiros.jpg" alt="" width="916" height="193">
+				</div>
+			</div>
+		</div>
+	</section>
+
+
 {% endblock %}

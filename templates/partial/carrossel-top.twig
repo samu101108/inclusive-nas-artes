@@ -1,0 +1,35 @@
+{% block carrossel %}
+    <div class="carrossel-home relative bg-slate-200">
+        {% for evento in eventos %}
+            <div class="slide-home">
+                <div class="wrapper">
+                    <div class="content relative h-[376px]">
+                        {# Imagem para o fundo #}
+                        <figure class="bg-gradient-to-tl from-vermelho-400 via-amarelo-400 to-azul-400 opacity-60 w-full h-full">
+                            <img class="mix-blend-overlay grayscale inset-0 w-full h-full object-cover object-center" src="{{ evento.thumbnail.src }}" alt="">
+                        </figure>
+                        {# Texto por cima da imagem #}
+                        <div class="absolute z-10 top-0 slide-text px-4 md:px-0 md:ml-24 max-w-[512px] h-[376px] text-marrom flex flex-col justify-center">
+                            <div class="mx-auto">
+                                <h2 class="font-bold text-4xl mb-4" style="text-shadow: 0 2px 4px #fff;">{{ evento.title }}</h2>
+                                <p class="excerpt font-body text-lg mb-5" style="text-shadow: 0 2px 4px #fff;">{{ evento.preview.length(19).read_more('') }}</p>
+                                <div class="my-2">
+                                    <a href="{{ evento.link }}" class="cta text-sm text-white font-bold uppercase px-10 py-[10px] bg-laranja-400 hover:bg-laranja-600 hover:text-white transition-all rounded-full">Leia mais</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+
+{# {% for post in posts %}
+    <div class="blog-section__blog-post-cards__card w-[287px] mt-12 md:mt-14 mb-14 mr-7">
+        <a href="{{post.link}}"><img class="img-destacada rounded-3xl" src="{{ post.thumbnail.src }}" alt="" width="320" height="176"></a>
+        <div class="data bg-verde-200 text-branco text-xs font-bold w-40 rounded-full px-4 py-2 mt-3 mb-4">{{post.date}}</div>
+        <div class="excerpt font-bold text-lg text-[#0F5358]"><a href="{{post.link}}">{{post.post_content|excerpt(8)}}</a></div>
+    </div>
+{% endfor %} #}

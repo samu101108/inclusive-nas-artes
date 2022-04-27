@@ -1,0 +1,37 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper container mx-auto ">
+		<div class="sm:w-10/12 md:w-7/12 py-8 max-w-5xl">
+			<h2 class="mb-4 text-4xl text-marrom font-bold">Um Mundo Melhor Para Todos</h2>
+			<p class="mb-2 text-cinza">Aqui na Associação Inclusive nas Artes - Centro de Arte, Cultura e Inclusão, somos movidos em fazer a nossa parte para tornar o mundo um lugar melhor para todos.</p>
+			<p class="mb-2 text-cinza">Nós nos esforçamos para construir relacionamentos produtivos e causar um impacto positivo em todas as nossas atividades.</p>
+			<p class="mb-2 text-cinza">Neste sentido acreditamos que a arte é um caminho transformador para a melhoria da qualidade de vida e felicidade para nossos usuários e demais envolvidos.</p>
+
+			<h3 class="mb-4 text-3xl text-marrom font-bold">Nossa Missão</h3>
+			<p class="mb-2 text-2xl text-cinza font-medium">Transformando arte e cultura em inclusão social</p>
+			<p class="mb-2 text-cinza">Nossa missão é criar oportunidades para as pessoas com deficiência e necessidades especiais através de atividades de arte e cultura para promover a inclusão social, melhorar a qualidade de vida e trazer realização e felicidade para todos os envolvidos.</p>
+		</div>
+
+		<div class="flex justify-center md:justify-between flex-wrap max-w-[993px] m-auto py-8">
+			<div class="card md:w-3/12 flex flex-col items-center mb-5">
+				<img class="rounded-full w-full max-w-[215px]" src="{{theme.link}}/static/imagens/rodrigo.png" alt="" width="215" height="215">
+				<h4 class="text-center text-2xl">Rodrigo Matos</h4>
+				<p class="mb-2 text-center">Presidente</p>
+				<p class="mb-2 text-center">Administrador de empresas com mais de 30 anos de experiência na área de gestão e TI em empresas nacionais e internacionais.</p>
+			</div>
+			<div class="card md:w-3/12 flex flex-col items-center mb-5">
+				<img class="rounded-full w-full max-w-[215px]" src="{{theme.link}}/static/imagens/adriana.png" alt="" width="215" height="215">
+				<h4 class="text-center text-2xl">Adriana Villar</h4>
+				<p class="mb-2 text-center">Diretora de Comunicação</p>
+				<p class="mb-2 text-center">Arte educadora com mais de 17 anos trabalhando com artes plásticas e cênicas para pessoas com deficiência.</p>
+			</div>
+			<div class="card md:w-3/12 flex flex-col items-center mb-5">
+				<img class="rounded-full w-full max-w-[215px]" src="{{theme.link}}/static/imagens/Mauro.png" alt="" width="215" height="215">
+				<h4 class="text-center text-2xl">Mauro Araújo</h4>
+				<p class="mb-2 text-center">Diretor de Operações</p>
+				<p class="mb-2 text-center">Administrador de empresas com mais de 5 anos atuando no mercado de empresas sociais.</p>
+			</div>
+		</div>
+	</div><!-- /content-wrapper -->
+{% endblock %}
