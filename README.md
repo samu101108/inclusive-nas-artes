@@ -1,4 +1,6 @@
+.:Esse tema usa Timber. Instale o plugin do timber para poder editar o tema e abrir o site completamente.
 
+.:Você pode abrir o protótipo do site no Figma. O arquivo está em /protótipo/Inclusive_nas_artes.fig
 # The Timber Starter Theme
 
 The "_s" for Timber: a dead-simple theme that you can build from. The primary purpose of this theme is to provide a file structure rather than a framework for markup or styles. Configure your Sass, scripts, and task runners however you would like!
